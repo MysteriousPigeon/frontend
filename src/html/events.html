@@ -98,9 +98,10 @@
 
         <a href="#" class="events__link link">
             <span class="link__name">Показать ещё</span>
-            <svg class="link__icon link__icon--90d" width="60" height="91">
+            <svg class="link__icon link__icon--90" width="91" height="60">
                 <use xlink:href="assets/icons/symbols.svg#link"></use>
             </svg>
+            <!-- я не понимаю почему, но здесь не отображается стрелка -->
         </a>
         <section class="events__services">
             <h2 class="events__title section-title">Дополнительные услуги</h2>
@@ -210,7 +211,7 @@
         @@include('blocks/info.html')
     </main>
 
-    <footer class="page-footer"></footer>
+    @@include('blocks/page-footer.html')
 </body>
 
 </html>
