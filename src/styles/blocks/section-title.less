@@ -1,4 +1,5 @@
-.section-title {
+.section-title{
+    margin: 0 0 150px;
     box-sizing: border-box;
     padding: 7px 45px 9px;
     max-width: 624px;
@@ -10,6 +11,20 @@
     font-size: 36px;
     font-style: normal;
     font-weight: 500;
-    color: #fff;
-    margin: 0 auto 150px;
-  }
+    color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+
+    &--fs22{
+        font-size: 22px;
+    }
+
+    &--mt208{
+        margin-top: 208px;
+    }
+
+    @media @bw370{
+        font-size: 16px;
+        margin-bottom: 90px;
+    }
+}

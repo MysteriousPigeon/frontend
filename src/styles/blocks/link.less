@@ -1,26 +1,24 @@
 .link{
-    display: flex;
-    justify-content: space-between;
+    cursor: pointer;
+    display:flex;
     align-items: center;
     text-decoration: none;
-    height: 0;
     font-weight: 600;
     font-size: 16px;
+    //height: 0;
     color: @black;
     transition: color 0.2s;
-
+    
     &:hover{
-        color: @red;
+            color: @red;
     }
-
     &:active{
         color: @red;
     }
 
     &__icon{
         margin-left: 20px;
-        color: @black;
-        &--90{
+        &--90deg{
             transform: rotate(90deg);
             height: auto;
             width: 60px;

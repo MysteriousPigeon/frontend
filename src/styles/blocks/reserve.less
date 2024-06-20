@@ -4,30 +4,62 @@
     grid-template-columns: 405px calc(89% - 405px);
     grid-template-areas: 
     "checks scheme"
-    "order legend";
+    "order legend"; 
     width: 100%;
 
-    &__checks{
+    @media @bw370{
+        grid-template-columns:100%;
+        grid-template-areas: 
+        "scheme"
+        "legend"
+        "checks"
+        "order";
+    }
+    @media @bw1020{
+        grid-template-columns: 233PX calc(89% - 233PX);
+        grid-template-areas: 
+    "scheme scheme"
+    "checks legend"
+    "checks order"; 
+    }
+    
+    &__checks {
         grid-area: checks;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
-    &__order{
+    &__order {
         grid-area: order;
+
+        @media @bw370{
+            width:100%;
+            align-self: center;
+            text-align: center;
+        }
     }
-    &__scheme{
+    &__scheme {
         grid-area: scheme;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
+
+        @media @bw1020{
+            align-items: center;
+        }
+
     }
-    &__legend{
+    &__legend {
         grid-area: legend;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         text-align: right;
+
+        @media @bw370{
+            align-items: flex-start;
+        }
+     
     }
 
     &__section-title{
@@ -38,6 +70,14 @@
 
         &--mb30{
             margin-bottom: 30px;
+
+            @media @bw1020{
+                font-size: 16px;
+            }
+        }
+
+        @media @bw1020{
+            font-size: 16px;
         }
     }
 
@@ -49,10 +89,15 @@
     }
     &__scene-container{
         display: flex;
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
         width: 100%;
         max-width: 780px;
+
+        @media @bw1020{
+            align-self: center;
+            justify-content: center;
+        }
     }
     &__scheme-title{
         margin: 0 0 40px;
@@ -63,12 +108,20 @@
         font-size: 16px;
         line-height: 22px;
         text-align: center;
+        max-width: 152px;
+        margin-left: calc(33%);
     }
-    &__scheme-wrapper{
+    &__scheme-wrapper {
         position: relative;
         width: 100%;
-    }
-    &__scene{
+       //&::after {
+          //content: "";
+          //display: block;
+          //width: 100%;
+          //padding-top: 51.15384%;
+        //}
+      }
+    &__scene {
         position: absolute;
         top: 0;
         left: 0;
@@ -76,48 +129,76 @@
         height: 100%;
     }
 
-    &__tickets{
+    &__tickets {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
         margin-bottom: 18px;
-    }
-    &__qty{
-        &::after{
-            content: attr(data-currency);
-            margin-left: 4px;
-            font-size: 0.95em;
+      }
+      &__qty {
+        &::after {
+          content: " " attr(data-caption) " | " attr(data-price);
         }
-    }
-    &__total{
+      }
+      &__sum {
+        &::after {
+          content: attr(data-currency);
+          margin-left: 4px;
+          font-size: 0.95em;
+        }
+      }
+      &__total {
         text-align: center;
         font-size: 20px;
         font-weight: 600;
         line-height: 20px;
         margin-bottom: 55px;
-        &::before{
-            content: attr(data-currency);
-            margin-right: 30px;
+        &::before {
+          content: attr(data-caption);
+          margin-right: 30px;
         }
-        &::after{
-            content: attr(data-currency);
-            margin-left: 4px;
-            font-size: 0.95em;
+        &::after {
+          content: attr(data-currency);
+          margin-left: 4px;
+          font-size: 0.95em;
+        }
+
+        @media @bw370{
+            font-size: 18px;
         }
     }
 
-    &__submite{
+    &__submit{
         text-align: center;
         width: 100%;
         padding-top: 15px;
         padding-bottom: 15px;
+
+
+        @media @bw370{
+            align-self: center;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        @media @bw768{
+            text-align: center;
+        }
     }
+
     &__price{
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         margin-bottom: 35px;
+
+        @media @bw370{
+            align-items: flex-start;
+            text-align: left;
+        }
     }
+
+        
     &__price-item{
         box-sizing: border-box;
         position: relative;
@@ -127,6 +208,7 @@
         padding-top: 2px;
         font-size: 14px;
         line-height: 19px;
+
 
         &::before{
             content: '';
@@ -148,7 +230,7 @@
                 background-color: @red;
             }
         }
-
+        
         &:last-child{
             margin-bottom: 0;
         }
@@ -158,6 +240,11 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
+        @media @bw370{
+            align-items: flex-start;
+            text-align: left;
+        }
     }
 
     &__note{
@@ -171,13 +258,14 @@
         line-height: 19px;
 
         &--free{
-            &::before, &::after{
-                content: '';
+            &::before,
+            &::after{
+                content:'' ;
                 box-sizing: border-box;
                 display: block;
                 position: absolute;
                 left: 0;
-                top: 0;
+                top:0;
                 width: 24px;
                 height: 24px;
                 border: 1px solid @black;
@@ -191,19 +279,26 @@
 
         &--booked{
             &::before{
-                content: '';
+                content:'' ;
                 display: block;
+                position: absolute;
                 left: 0;
-                top: 0;
+                top:0;
                 width: 24px;
                 height: 24px;
+                border: 1px solid @black;
                 border-radius: 50%;
                 background-color: @gray_dark;
             }
 
-            &:last-child{
-                margin-bottom: 0;
+            @media @bw370{
+                margin-left: 5px;
             }
         }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
     }
+
 }

@@ -9,23 +9,24 @@
         .check__mark{
             border-color: @red;
         }
-        .check__input{
+        .check__input {
             &:checked{
-                &~.check__mark{
+                & ~ .check__mark{
                     background-color: @red;
                 }
             }
         }
     }
-    &--disables{
+
+    &--disabled{
         pointer-events: none;
         opacity: 0.5;
     }
-
+    
     &__input{
         .is-hidden;
         &:checked{
-            &~.check__mark{
+            & ~ .check__mark{
                 background-color: @black;
                 &::after{
                     content: '';
@@ -42,6 +43,7 @@
             }
         }
     }
+
     &__mark{
         position: absolute;
         top: 0;
@@ -53,10 +55,9 @@
         background-color: transparent;
         transition: background-color 0.2s;
     }
+
     &__label{
         font-size: 14px;
         color: @black;
     }
-
-    
 }

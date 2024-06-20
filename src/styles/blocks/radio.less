@@ -1,7 +1,7 @@
+
 .radio{
     display: flex;
     flex-direction: column;
-
     &__label{
         display: block;
         margin-bottom: 9px;
@@ -18,17 +18,16 @@
     &__input{
         .is-hidden;
         &:checked{
-            &  ~.radio__mark{
+            & ~ .radio__mark{
                 background-color: @black;
             }
         }
     }
-
     &__mark{
         box-sizing: border-box;
         position: absolute;
         left: 0;
-        top: 0;
+        top:0;
         width: 23px;
         height: 23px;
         border-radius: 50%;
@@ -44,6 +43,12 @@
         font-family: @font1;
         font-weight: 400;
         font-size: 16px;
-        line-height: 22px;
+        line-height: 22px;  
+
+        @media @bw370{
+           width:180px;
+           max-width: 180px;
+        }
+ 
     }
 }
