@@ -4,9 +4,10 @@
     <body class="body">
         @@include('blocks/page-header.html')
         <main class="main">
+            @@include('blocks/breadcrumbs.html')
             <article class="event">
-                <header class="event__header">
-                    <h1 class="event__title">Вечер | The Best of Sade</h1>
+              <header class="event__header">
+                <h1 class="event__title title">Вечер | The Best of Sade</h1>
 
                 <div class="event__about">
                   <div class="event__info event__gridtext1">
@@ -19,7 +20,7 @@
                     </div>
                   </div>
 
-                  <picture class="event__picture event__gridP"><img class="event__image " src="assets/images/Sade.png" alt="Sade"/></picture>
+                  <picture class="event__picture event__gridP"><img class="event__image " src="assets/images/event/Sade.png" alt="Sade"/></picture>
 
                   <div class="event__info  event__gridtext2">
                     <span class="event__time" datetime="2024-12-16T20:00" data-caption="начало">
@@ -32,11 +33,11 @@
                   </div>
 
                 </div>
-                </header>
+              </header>
 
-                <div class="event__container">
-                    <div class="event__content content">
-                        <h4>Программа мероприятия:</h4>
+              <div class="event__container">
+                <div class="event__content content">
+                  <h5>Программа мероприятия:</h5>
                     <ul>
                       <li>20:15 — Приветствие гостей</li>
                       <li>20:30 — Первая подача блюд | Салаты</li>
@@ -49,9 +50,8 @@
                     </ul>
 
                     <br />
-                    
 
-                    <h4>The Best of Sade</h4>
+                    <h5>The Best of Sade</h5>
                     <p>Первый альбом-компиляция Sade, выпущенный в 1994 году. Он содержит 9 треков, включая самые популярные хиты группы, раритеты и их любимые треки. </p>
                     <p>Группа продемонстрировала необычайное долголетие и креативность своей творческой карьеры. Она лидировала музыкальных чартах с 1994 по 1995 год, став четырехкратно платиновой в США и продав более 2 миллионов копий в Европе.</p>
                     
@@ -69,8 +69,10 @@
                   </div>
                 @@include('blocks/reserve.html', {"class": "event__reserve"})
               </div>
+            
             </article>
-        </main>
+          </main>
+
         @@include('blocks/page-footer.html')
     </body>
 </html>
